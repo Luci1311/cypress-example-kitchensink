@@ -21,7 +21,7 @@ describe('Test for Study group on Lambda Test', () => {
             .should('have.text', newItem)
     });
 
-    it.only('input two values and validate the sum', () => {
+    it('input two values and validate the sum', () => {
         const val1 = 3
         const val2 = 4
         const sum = val1 + val2
