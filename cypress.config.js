@@ -4,7 +4,7 @@ module.exports = {
     scrollBehavior: 'center',
     env: {
       // https://github.com/bahmutov/cypress-slow-down
-      commandDelay: 2500,
+      commandDelay: 700,
     },
   },
 }
