@@ -9,7 +9,7 @@ describe('Test for Study group on Lambda Test', () => {
     cy.contains('Simple Form Demo').click()
   });
 
-  //Cypress.on('uncaught:exception', () => false)
+  Cypress.on('uncaught:exception', () => false)
 
   it('input text and validate it', () => {
     const newItem = 'Test 1234'
