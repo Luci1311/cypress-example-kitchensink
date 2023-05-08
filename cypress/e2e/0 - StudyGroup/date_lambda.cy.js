@@ -1,9 +1,11 @@
 /// <reference types="cypress" />
 
-const dayjs = require('dayjs')
-
 import { slowCypressDown } from 'cypress-slow-down'
 slowCypressDown()
+
+const dayjs = require('dayjs')
+
+
 
 describe('Test for Study group on Lambda Test', () => {
 
