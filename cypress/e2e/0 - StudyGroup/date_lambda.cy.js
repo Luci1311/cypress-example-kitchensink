@@ -2,6 +2,9 @@
 
 const dayjs = require('dayjs')
 
+import { slowCypressDown } from 'cypress-slow-down'
+slowCypressDown()
+
 describe('Test for Study group on Lambda Test', () => {
 
   beforeEach(() => {

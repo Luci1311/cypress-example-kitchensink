@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
-
+import { slowCypressDown } from 'cypress-slow-down'
+slowCypressDown()
 
 describe('Test for Study group on Lambda Test', () => {
 
