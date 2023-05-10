@@ -7,7 +7,7 @@ const dayjs = require('dayjs')
 
 
 
-describe('Test for Study group on Lambda Test', () => {
+describe('Test for Study group on Lambda Test - Date picker', () => {
 
   beforeEach(() => {
     cy.setCookie('exit_popup_dismissed', 'closed');
