@@ -26,6 +26,15 @@ describe('Test for Study group on Lambda Test - Tabel', () => {
       .should('be.visible')
   });
 
+  it('The cells of a row are not empty and contain expected text', () => {
+    cy._5rows()
+    cy.log('**get the 3rd row and check it is not empty and has expected text**')
+    cy.get('table tr')
+      .eq(3)
+      .should('not.be.empty')
+      .should('have.text',"3Ira ParkerVivamus.molestie.dapibus@quisturpisvitae.edu1-584-906-8572Sep 15, 2015")
+  });
+
 
 
   it('Show 5 rows', () => {
