@@ -33,7 +33,7 @@ describe('Test for Study group on Lambda Test - Tabel', () => {
     cy._5rows()
     cy.get('table tbody > :nth-child(6)')
       .should('not.be.visible')
-    cy.log('**lenght of 8 means 2 buttons and 6 pages**')
+    cy.log('**length of 8 means 2 buttons and 6 pages**')
     cy.get('li[data-page]')
       .should('have.lengthOf', 8)
   });
