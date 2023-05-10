@@ -13,7 +13,7 @@ describe('Test for Study group on Lambda Test - Tabel', () => {
 
   Cypress.on('uncaught:exception', () => false)
 
-
+  //1
   it('Show all rows', () => {
     cy.log('**Show all rows and check the last item text id**')
     cy.get('select[id="maxRows"]')
@@ -26,17 +26,19 @@ describe('Test for Study group on Lambda Test - Tabel', () => {
       .should('be.visible')
   });
 
+
+  //2
   it('The cells of a row are not empty and contain expected text', () => {
     cy._5rows()
     cy.log('**get the 3rd row and check it is not empty and has expected text**')
     cy.get('table tr')
       .eq(3)
       .should('not.be.empty')
-      .should('have.text',"3Ira ParkerVivamus.molestie.dapibus@quisturpisvitae.edu1-584-906-8572Sep 15, 2015")
+      .should('have.text', "3Ira ParkerVivamus.molestie.dapibus@quisturpisvitae.edu1-584-906-8572Sep 15, 2015")
   });
 
 
-
+  //3
   it('Show 5 rows', () => {
     cy.log('**show 5 rows and check number of pages and check if only 5 rows are displayed**')
     cy._5rows()
@@ -47,6 +49,8 @@ describe('Test for Study group on Lambda Test - Tabel', () => {
       .should('have.lengthOf', 8)
   });
 
+
+  //4
   it('Check if next pg button works', () => {
     cy.nextPage()
   })
@@ -55,6 +59,8 @@ describe('Test for Study group on Lambda Test - Tabel', () => {
     cy.prevPage()
   })
 
+  
+  //5
   it('Go to random page', () => {
     cy._5rows()
     cy.log('**check if the page we are on is the active one**')
