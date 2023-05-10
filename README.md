@@ -33,8 +33,6 @@ Travis | | [basic/.travis.yml](basic/.travis.yml) | [.travis.yml](.travis.yml)
 
 You can find all CI results recorded on the Cypress Cloud [![Cypress Cloud](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/simple/4b7344/master&style=flat&logo=cypress)](https://cloud.cypress.io/projects/4b7344/runs)
 
-If you are looking for BitBucket Pipelines example, check out [bitbucket.org/cypress-io/cypress-example-kitchensink](https://bitbucket.org/cypress-io/cypress-example-kitchensink).
-
 The Cypress documentation page [CI Provider Examples](https://docs.cypress.io/guides/continuous-integration/ci-provider-examples) provides additional examples with extensive guides for using Cypress with some of the most popular CI providers.
 
 ## Cypress on CI Workshop
@@ -43,11 +41,11 @@ Cypress team has created a full workshop showing how to run Cypress on popular C
 
 ## CI Community Examples
 
-CI | Url
+CI | Link
 :--- | :--- |
-IBM Cloud CI | [Cloud Foundry](https://github.com/iamgollum/cypress-example-kitchensink/tree/281-ibm-cloud-pipeline)
-GitLab CI | [Example caching when installing using Yarn](https://gitlab.com/bahmutov/cypress-yarn-gitlab-ci-example)
-CodeFresh | [bahmutov/cypress-codefresh-example](https://github.com/bahmutov/cypress-codefresh-example)
+IBM Cloud CI (legacy) | [Cloud Foundry](https://github.com/iamgollum/cypress-example-kitchensink/tree/281-ibm-cloud-pipeline)
+GitLab CI (legacy) | [Example caching when installing using Yarn](https://gitlab.com/bahmutov/cypress-yarn-gitlab-ci-example)
+CodeFresh (legacy) | [bahmutov/cypress-codefresh-example](https://github.com/bahmutov/cypress-codefresh-example)
 
 ## Help + Testing
 
