@@ -28,12 +28,7 @@ describe('Test for Study group on Lambda Test - Tabel', () => {
   //show 5 rows and check number of pages 
   //check if only 5 rows are displayed
   it('Show 5 rows', () => {
-    cy.get('select[id="maxRows"]')
-      .select('5')
-    cy.get('div[class="pagination-container"]')
-      .should('be.visible')
-    cy.get('table tbody > :nth-child(5)')
-      .should('not.have.css', 'style="display: none;"')
+    cy._5rows()
     cy.get('table tbody > :nth-child(6)')
       .should('not.be.visible')
     cy.get('li[data-page]')
@@ -45,7 +40,16 @@ describe('Test for Study group on Lambda Test - Tabel', () => {
     cy.nextPage()
   })
 
-  it.only('Check if prev pg button works', () => {
+  //check prev button
+  it('Check if prev pg button works', () => {
     cy.prevPage()
+  })
+
+  //go to random page
+  it('Go to random page', () => {
+    cy._5rows()
+    cy.get('li[data-page="3"]')
+      .click({ force: true })
+      .should('have.class', 'active')
   })
 })
