@@ -32,6 +32,7 @@ describe('Test for Study group on Lambda Test - Input fields', () => {
       .type(val1)
     cy.get('input[id="sum2"]')
       .type(val2)
+    cy.log('**it gets the sum of val1 and val2**')
     cy.get('#gettotal > button')
       //cy.get('button[class="mt-20 mb-10 bg-black text-white rounded px-15 py-5 hover:bg-lambda-900 focus:outline-none"]').eq(1)
       //cy.get('button[class="mt-20 mb-10 bg-black text-white rounded px-15 py-5 hover:bg-lambda-900 focus:outline-none"]').last()

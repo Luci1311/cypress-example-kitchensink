@@ -30,7 +30,7 @@ describe('Test for Study group on Lambda Test - Date picker', () => {
       .should('have.value', "")
   });
 
-  it.only('date range picker ex2', () => {
+  it('date range picker ex2', () => {
     const startDate = '2023-05-10'
     const endDate = '2023-05-13'
     const startDateINT = Number(startDate.slice(0, 10).split('-').join(''))
