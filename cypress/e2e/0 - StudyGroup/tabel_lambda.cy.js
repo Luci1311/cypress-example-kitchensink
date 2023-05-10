@@ -55,12 +55,13 @@ describe('Test for Study group on Lambda Test - Tabel', () => {
     cy.nextPage()
   })
 
+  //5
   it('Check if prev pg button works', () => {
     cy.prevPage()
   })
 
-  
-  //5
+
+  //6
   it('Go to random page', () => {
     cy._5rows()
     cy.log('**check if the page we are on is the active one**')
