@@ -44,7 +44,7 @@ describe('Test for Study group on DemoQA', () => {
             .should('have.text', 'Please verify reCaptcha to register!')
     })
 
-    it.only('Create new user', () => {
+    it('Create new user', () => {
         cy.RegisterFields()
         cy.get('iframe[title="reCAPTCHA"]')
         .first()
