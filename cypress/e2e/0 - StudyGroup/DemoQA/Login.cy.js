@@ -1,9 +1,15 @@
 /// <reference types="cypress" />
 
 import { slowCypressDown } from 'cypress-slow-down'
-slowCypressDown(0)
+slowCypressDown()
+
+import { LogInComponent } from "../DemoQA/Component-objects/Login"
+import { BooksComponent } from "./Component-objects/Books";
+
 
 describe('Test for Study group on DemoQA', () => {
+    const logpg = new LogInComponent();
+    const book = new BooksComponent();
 
     beforeEach(() => {
         cy.visit('https://demoqa.com/login')
@@ -12,48 +18,54 @@ describe('Test for Study group on DemoQA', () => {
 
     Cypress.on('uncaught:exception', () => false)
 
-    it('Invalid credentials', () => {
-        cy.get('#userName')
-            .type('Invalid')
-        cy.get('#password')
-            .type('Invalid')
-        cy.get('#login')
-            .click()
-        cy.get('#name')
-            .should('be.visible')
-            .should('have.attr', 'style', 'color: red;')
-            .should('have.text', 'Invalid username or password!')
-    })
-
-    it('Create new user - not completing fields', () => {
-        cy.get('#newUser')
-            .click()
-        cy.get('#register')
-            .click()
-        cy.get('#firstname')
-            .should('have.class', 'mr-sm-2 is-invalid form-control')
+    it('Create new user - fields not completed', () => {
+        logpg.userEmptyFields();
     })
 
     it('Create new user - not checking captcha', () => {
-        cy.LogIn()
-        cy.get('#register')
-            .click()
-        cy.get('#name')
-            .should('be.visible')
-            .should('have.attr', 'style', 'color: red;')
-            .should('have.text', 'Please verify reCaptcha to register!')
+        logpg.completeFields();
+        logpg.registerNoCaptcha();
     })
 
-    it('Create new user', () => {
-        cy.RegisterFields()
-        cy.get('iframe[title="reCAPTCHA"]')
-        .first()
-        .its('0.contentDocument.body')
-        .should('not.be.undefined')
-        .and('not.be.empty')
-        .then(cy.wrap)
-        .find('#recaptcha-anchor')
-        .should('be.visible')
-        .click();
+    //---------- will not complete the reg due to captcha -------------
+    it('Create new user via UI', () => {
+        logpg.completeFields();
+        logpg.registerCaptcha();
+    })
+
+    it('Login empty credentials', () => {
+        logpg.loginempty();
+    })
+
+    it('Login invalid credentials', () => {
+        logpg.logininvalid();
+    })
+
+    /*it('Create new user via API', () => {
+        cy.authenticate()
+    })*/
+
+    it('Login valid credentials', () => {
+        logpg.loginvalid();
+    })
+
+    it('User can log out', () => {
+        logpg.loginvalid();
+        logpg.logOut();
+    })
+
+    it('Search a book in Bookstore', () => {
+        book.searchBook();
+    })
+
+    it('Add book to profile', () => {
+        logpg.loginvalid();
+        book.addBookToProfile();
+    })
+
+    it('Delete book from profile', () => {
+        logpg.loginvalid();
+        book.addBookToProfile();
+        book.removeBookFromProfile();
     })
 })

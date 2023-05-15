@@ -9,7 +9,15 @@ module.exports = {
     defaultCommandTimeout: 10000,
     env: {
       // https://github.com/bahmutov/cypress-slow-down
-      commandDelay: 1500,
+      commandDelay: 800,
+      baseUrl: "https://demoqa.com",
+
+      waitForAnimations: true,
+  
+      bookstoreUser: {
+          username:  "Maverick",
+          password:  "Parola1234!" 
+      }
     },
   },
 }

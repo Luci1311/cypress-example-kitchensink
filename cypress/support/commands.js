@@ -23,9 +23,9 @@
 //
 // -- This will overwrite an existing command --
 
-
-
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+//---------------------------------- Lambda COMMANDS -------------------------------
 Cypress.Commands.add('_5rows', () => {
       cy.get('select[id="maxRows"]')
             .should('have.value', '5')
@@ -63,18 +63,19 @@ Cypress.Commands.add('prevPage', () => {
             .should('not.be.visible')
 })
 
-Cypress.Commands.add('RegisterFields', () => {
-      cy.get('#newUser')
-            .click()
-      cy.get('#firstname')
-            .type('Lucian')
-      cy.get('#lastname')
-            .type('I.')
-      cy.get('#userName')
-            .type('Maverick')
-      cy.get('#password')
-            .type('Parola123')
-     
-})
+//---------------------------------- DEMO QA COMMANDS -------------------------------
+
+Cypress.Commands.add('authenticate', () => {
+      cy.request({
+        method: 'POST',
+        url: `${Cypress.env('baseUrl')}/Account/v1/User`,
+        body: {
+          userName: Cypress.env('bookstoreUser').username,
+          password: Cypress.env('bookstoreUser').password,
+        },
+      }).then(($response) => {
+        expect($response.status).to.eq(201);
+      });
+    });
 
 
