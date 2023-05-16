@@ -44,6 +44,10 @@ export class LogInComponent {
         return cy.get('#submit')
     }
 
+    static get OKMODAL_LOCATOR() {
+        return cy.get('#closeSmallModal-ok')
+    }
+
 
     loginempty() {
         LogInComponent.LOGINBTN_LOCATOR
@@ -127,6 +131,17 @@ export class LogInComponent {
                 .click()
             cy.url().should('include', `${Cypress.env('baseUrl')}/login`)
         });
+    }
+
+    deleteAccount() {
+        cy.contains('#submit', 'Delete Account')
+            .click()
+        cy.get('.modal-content').within(() => {
+            LogInComponent.OKMODAL_LOCATOR
+                .click()
+        })
+        cy.url().should('include', `${Cypress.env('baseUrl')}/login`)
+            ;
     }
 
 }

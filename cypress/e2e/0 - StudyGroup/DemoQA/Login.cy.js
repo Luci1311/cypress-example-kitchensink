@@ -40,13 +40,19 @@ describe('Test for Study group on DemoQA', () => {
     it('Login invalid credentials', () => {
         logpg.logininvalid();
     })
-
+    //---------- Run only if no user is created -------------
     /*it('Create new user via API', () => {
         cy.authenticate()
     })*/
 
     it('Login valid credentials', () => {
         logpg.loginvalid();
+    })
+
+    it('Delete user account', () => {
+        logpg.loginvalid();
+        logpg.deleteAccount();
+        cy.authenticate();
     })
 
     it('User can log out', () => {
@@ -63,9 +69,14 @@ describe('Test for Study group on DemoQA', () => {
         book.addBookToProfile();
     })
 
-    it('Delete book from profile', () => {
+    it('Deletes a single book from profile', () => {
+        logpg.loginvalid();
+        book.removeBookFromProfile();
+    })
+
+    it('Deletes all books from profile', () => {
         logpg.loginvalid();
         book.addBookToProfile();
-        book.removeBookFromProfile();
+        book.removeAllBooksFromProfile();
     })
 })

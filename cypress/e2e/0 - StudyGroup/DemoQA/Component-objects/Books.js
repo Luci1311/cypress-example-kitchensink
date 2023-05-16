@@ -59,4 +59,18 @@ export class BooksComponent {
 
     }
 
+    removeAllBooksFromProfile() {
+        cy.get('.rt-tr-group')
+            .should('not.be.empty')
+        cy.contains('#submit', 'Delete All Books')
+            .click()
+        cy.get('.modal-content').within(() => {
+            BooksComponent.OKMODAL_LOCATOR
+                .click()
+        })
+        cy.contains('.rt-tr-group').should('not.exist');
+        ;
+
+    }
+
 }
