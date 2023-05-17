@@ -13,7 +13,6 @@ describe('Test for Study group on DemoQA', () => {
 
     beforeEach(() => {
         cy.visit('https://demoqa.com/login')
-        cy.viewport(1440, 1080)
     });
 
     Cypress.on('uncaught:exception', () => false)
