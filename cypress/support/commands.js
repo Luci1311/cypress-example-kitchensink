@@ -63,6 +63,37 @@ Cypress.Commands.add('prevPage', () => {
             .should('not.be.visible')
 })
 
+Cypress.Commands.add('tasks', () => {
+      const text = 'la'
+      cy.get('#task-table-filter')
+        .type(text)
+      cy.get('#task-table > tbody > tr > td')
+        .each(($el) => {
+          if ($el.text().toLowerCase().trim().includes(text)) {
+            expect($el.text().toLowerCase().trim()).to.include(text)
+          }
+        })
+})
+
+Cypress.Commands.add('listedUsers', () => {
+      const text2 = 'Wi'
+    cy.get('.filters > th > .form-control')
+      .should('have.attr', 'disabled')
+    cy.contains('.btn-default', 'Filter')
+      .click()
+    cy.get('.filters > th > .form-control')
+      .should('not.have.attr', 'disabled')
+    cy.get('.filters > :nth-child(2) > .form-control')
+      .should('have.attr', 'placeholder', 'Username')
+      .type(text2)
+    cy.get('.input-section > .py-10 > .table-hover > tbody > tr > td')
+      .each(($el) => {
+        if ($el.text().trim().includes(text2)) {
+          expect($el.text().trim()).to.include(text2)
+        }
+      })
+})
+
 //---------------------------------- DEMO QA COMMANDS -------------------------------
 
 Cypress.Commands.add('authenticate', () => {

@@ -4,7 +4,7 @@ module.exports = {
   viewportHeight: 1080,
   chromeWebSecurity: false,
   e2e: {
-    scrollBehavior: 'center',
+    scrollBehavior: 'nearest',
     experimentalRunAllSpecs: true,
     defaultCommandTimeout: 10000,
     blockHosts: [
@@ -13,7 +13,10 @@ module.exports = {
       "*static.criteo.net*",
       "*securepubads.g.doubleclick.net*",
       "*pagead2.googlesyndication.com*",
-      "*serving.stat-rock.com*"
+      "*serving.stat-rock.com*",
+      "*cdn.linkedin.oribi.io*",
+      "*salesiq.zohopublic.com*",
+      "*server.recotap.com*"
     ],
     env: {
       // https://github.com/bahmutov/cypress-slow-down
