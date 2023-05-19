@@ -14,10 +14,10 @@ describe('Test for Study group on Lambda Test - Tabel', () => {
   Cypress.on('uncaught:exception', () => false)
 
   it('Filter search results', () => {
-    cy.tasks()
+    cy._tasks()
   });
 
   it('Enables filters and search by username', () => {
-    cy.listedUsers();
+    cy._listedUsers();
   })
 })

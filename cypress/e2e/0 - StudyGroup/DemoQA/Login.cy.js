@@ -51,7 +51,7 @@ describe('Test for Study group on DemoQA', () => {
     it('Delete user account', () => {
         logpg.loginvalid();
         logpg.deleteAccount();
-        cy.authenticate();
+        cy._authenticate();
     })
 
     it('User can log out', () => {

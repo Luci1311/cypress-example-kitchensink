@@ -72,7 +72,7 @@
     "execa": "2.0.5",
     "globby": "11.1.0",
     "husky": "8.0.3",
-    "netlify-plugin-cypress": "2.2.1",
+    "netlify-plugin-cypress": "1.2.0",
     "semantic-release": "19.0.3",
     "start-server-and-test": "2.0.0",
     "typescript": "5.0.4",
