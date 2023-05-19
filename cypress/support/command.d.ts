@@ -9,7 +9,7 @@ declare namespace Cypress {
        * cy
        *   .authenticate()
        */
-       authenticate()
+       _authenticate()
 
        /**
        * filter the results by text in Tasks table in Table Data Search
@@ -18,7 +18,7 @@ declare namespace Cypress {
        * cy
        *   .authenticate()
        */
-       tasks()
+       _tasks()
 
        /**
        * filter the results by username in Listed Users table in Table Data Search
@@ -27,6 +27,6 @@ declare namespace Cypress {
        * cy
        *   .listedusers()
        */
-       listedUsers()
+       _listedUsers()
 
     }}
