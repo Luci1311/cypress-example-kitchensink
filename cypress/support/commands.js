@@ -63,7 +63,7 @@ Cypress.Commands.add('prevPage', () => {
             .should('not.be.visible')
 })
 
-Cypress.Commands.add('tasks', () => {
+Cypress.Commands.add('_tasks', () => {
       const text = 'la'
       cy.get('#task-table-filter')
         .type(text)
@@ -75,7 +75,7 @@ Cypress.Commands.add('tasks', () => {
         })
 })
 
-Cypress.Commands.add('listedUsers', () => {
+Cypress.Commands.add('_listedUsers', () => {
       const text2 = 'Wi'
     cy.get('.filters > th > .form-control')
       .should('have.attr', 'disabled')
@@ -96,7 +96,7 @@ Cypress.Commands.add('listedUsers', () => {
 
 //---------------------------------- DEMO QA COMMANDS -------------------------------
 
-Cypress.Commands.add('authenticate', () => {
+Cypress.Commands.add('_authenticate', () => {
       cy.request({
         method: 'POST',
         url: `${Cypress.env('baseUrl')}/Account/v1/User`,
