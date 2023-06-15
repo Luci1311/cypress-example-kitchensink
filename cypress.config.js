@@ -20,7 +20,7 @@ module.exports = {
     ],
     env: {
       // https://github.com/bahmutov/cypress-slow-down
-      commandDelay: 800,
+      commandDelay: 0,
       baseUrl: "https://demoqa.com",
 
       waitForAnimations: true,

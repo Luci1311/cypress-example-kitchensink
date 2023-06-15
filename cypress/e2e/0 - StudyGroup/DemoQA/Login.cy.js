@@ -1,8 +1,5 @@
 /// <reference types="cypress" />
 
-import { slowCypressDown } from 'cypress-slow-down'
-slowCypressDown()
-
 import { LogInComponent } from "../DemoQA/Component-objects/Login"
 import { BooksComponent } from "./Component-objects/Books";
 

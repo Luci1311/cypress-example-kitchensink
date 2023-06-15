@@ -1,8 +1,5 @@
 /// <reference types="cypress" />
 
-import { slowCypressDown } from 'cypress-slow-down'
-slowCypressDown()
-
 const dayjs = require('dayjs')
 
 
@@ -11,8 +8,7 @@ describe('Test for Study group on Lambda Test - Date picker', () => {
 
   beforeEach(() => {
     cy.setCookie('exit_popup_dismissed', 'closed');
-    cy.visit('https://www.lambdatest.com/selenium-playground/')
-    cy.contains('Bootstrap Date Picker').click()
+    cy.visit('https://www.lambdatest.com/selenium-playground/bootstrap-date-picker-demo')
   });
 
   Cypress.on('uncaught:exception', () => false)

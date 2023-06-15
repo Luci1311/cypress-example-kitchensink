@@ -1,14 +1,10 @@
 /// <reference types="cypress" />
 
-import { slowCypressDown } from 'cypress-slow-down'
-slowCypressDown()
-
 describe('Test for Study group on Lambda Test - Tabel', () => {
 
   beforeEach(() => {
     cy.setCookie('exit_popup_dismissed', 'closed');
-    cy.visit('https://www.lambdatest.com/selenium-playground/')
-    cy.contains('Bootstrap Alerts').click()
+    cy.visit('https://www.lambdatest.com/selenium-playground/bootstrap-alert-messages-demo')
   });
 
   Cypress.on('uncaught:exception', () => false)

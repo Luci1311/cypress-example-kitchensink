@@ -1,13 +1,10 @@
 /// <reference types="cypress" />
-import { slowCypressDown } from 'cypress-slow-down'
-slowCypressDown()
 
 describe('Test for Study group on Lambda Test - Input fields', () => {
 
   beforeEach(() => {
     cy.setCookie('exit_popup_dismissed', 'closed');
-    cy.visit('https://www.lambdatest.com/selenium-playground/')
-    cy.contains('Simple Form Demo').click()
+    cy.visit('https://www.lambdatest.com/selenium-playground/simple-form-demo')
   });
 
   Cypress.on('uncaught:exception', () => false)

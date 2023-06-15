@@ -1,14 +1,9 @@
 /// <reference types="cypress" />
-
-import { slowCypressDown } from 'cypress-slow-down'
-slowCypressDown()
-
 describe('Test for Study group on Lambda Test - Tabel', () => {
 
   beforeEach(() => {
     cy.setCookie('exit_popup_dismissed', 'closed');
-    cy.visit('https://www.lambdatest.com/selenium-playground/')
-    cy.contains('Table Pagination').click()
+    cy.visit('https://www.lambdatest.com/selenium-playground/table-pagination-demo')
   });
 
   Cypress.on('uncaught:exception', () => false)
@@ -22,7 +17,7 @@ describe('Test for Study group on Lambda Test - Tabel', () => {
       .should('not.be.visible')
     cy.get('table tr')
       .last()
-      .should('contain', '30')
+      .should('contain', '40')
       .should('be.visible')
   });
 
@@ -34,7 +29,7 @@ describe('Test for Study group on Lambda Test - Tabel', () => {
     cy.get('table tr')
       .eq(3)
       .should('not.be.empty')
-      .should('have.text', "3Ira ParkerVivamus.molestie.dapibus@quisturpisvitae.edu1-584-906-8572Sep 15, 2015")
+      .should('have.text', "3RichardKellyr.kelly@randatmail.com100-1594-70")
   });
 
 
@@ -44,9 +39,9 @@ describe('Test for Study group on Lambda Test - Tabel', () => {
     cy._5rows()
     cy.get('table tbody > :nth-child(6)')
       .should('not.be.visible')
-    cy.log('**length of 8 means 2 buttons and 6 pages**')
+    cy.log('**length of 10 means 2 buttons and 8 pages**')
     cy.get('li[data-page]')
-      .should('have.lengthOf', 8)
+      .should('have.lengthOf', 10)
   });
 
 
