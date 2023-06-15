@@ -7,6 +7,7 @@ module.exports = {
     scrollBehavior: 'nearest',
     experimentalRunAllSpecs: true,
     defaultCommandTimeout: 10000,
+    watchForFileChanges: false,
     blockHosts: [
       "*www.google-analytics.com*",
       "*tpc.googlesyndication.com*",
