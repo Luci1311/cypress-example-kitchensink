@@ -11,4 +11,8 @@ describe('Test for Study group on DemoQA Modals', () => {
         cy._smallmodals();
     });
 
+    it('Large modal', () => {
+        cy._largemodals();
+    });
+
 })

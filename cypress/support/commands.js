@@ -72,3 +72,7 @@ Cypress.Commands.add('_smallmodals', () => {
       modal.smallModal();
 })
 
+Cypress.Commands.add('_largemodals', () => {
+      modal.largeModal();
+})
+

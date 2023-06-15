@@ -13,4 +13,18 @@ export class Modals {
         cy.get('.modal-content')
             .should('not.exist')
     }
+
+    largeModal() {
+        cy.get('#showLargeModal')
+            .click()
+        cy.get('.modal-content').within(() => {
+            cy.get('.modal-body')
+                .should('be.visible')
+                .should('contain', 'Lorem Ipsum')
+            cy.get('#closeLargeModal')
+                .click()
+        })
+        cy.get('.modal-content')
+            .should('not.exist')
+    }
 }
